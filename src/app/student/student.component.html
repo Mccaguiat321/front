@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <div class="card">
+      <h1>Insert</h1>
+  
+      <form (ngSubmit)="save()" #studentForm="ngForm"> <!-- Use ngSubmit for form submission -->
+        <div class="form-group">
+          <label for="stname">Student Name</label>
+          <input type="text" [(ngModel)]="name" name="name" [ngModelOptions]="{standalone: true}" class="form-control" id="stname" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" [(ngModel)]="age" name="age" [ngModelOptions]="{standalone: true}" class="form-control" id="age" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="password" [(ngModel)]="password" name="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" required>
+        </div>
+  
+        <button type="submit" class="btn btn-primary mr-4">Save</button>
+      </form>
+  
+      <!-- Display success message if it exists -->
+      <div *ngIf="successMessage" class="alert alert-success mt-3">
+        {{ successMessage }}
+      </div>
+    </div>
+  </div>
+  
